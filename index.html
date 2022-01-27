@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  <title>Pizzo's Order Online</title>
+  <link rel="icon" href="images\pizza.png" type="image/icon type" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="Images/pizza.png" alt="pizzo's logo" width="30" height="24" class="d-inline-block align-text-top" />
+        Pizzo's
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#" >Order History</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Contact Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Customer Care</a></li>
+              <li><a class="dropdown-item" href="#">Feedback</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-primary" type="submit">
+            Search
+          </button>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModal">
+            Signup
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">
+            Login to Pizzo's
+            <img src="images/pizza.png" alt="pizzo's logo" width="30" height="24"
+              class="d-inline-block align-text-top" />
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-success">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- signup Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">
+            Welcome to Pizzo's
+            <img src="images/pizza.png" alt="pizzo's logo" width="30" height="24"
+              class="d-inline-block align-text-top" />
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First name" aria-label="First name" />
+            </div>
+
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 mx-3">
+          <label for="formGroupExampleInput" class="form-label"></label>
+          Email
+          </label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Email-address" />
+        </div>
+        <div class="mb-3 mx-3">
+          <label for="formGroupExampleInput2" class="form-label">Password</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" Set your password " />
+        </div>
+        <div class="mb-3 mx-3">
+          <label for="formGroupExampleInput3" class="form-label">Recheck Password</label>
+          <input type="text" class="form-control" id="formGroupExampleInput3" placeholder=" Confirm your password" />
+        </div>
+        <div class="col-12 mx-3">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress"
+            placeholder="1234 Main St, Apartment, studio, or floor">
+        </div>
+        <div class="mx-3 mt-3 ">
+          <input class="form-check-input me-2" type="checkbox" id="checkboxNoLabel" required="Required">I accept the <a
+            href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-danger">Signup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!-- order History modal -->
+
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Opps! &#128542; </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          You have to Login to check Order History
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Images/Pizza(1400 x 500 px).jpg" class="d-block w-100" alt="pizza image" />
+      </div>
+      <div class="carousel-item">
+        <img src="Images/Garlicbread(1400 x 500 px).jpg" class="d-block w-100" alt=" GarlicBread Image" />
+      </div>
+      <div class="carousel-item">
+        <img src="Images/Chocolava(1400 x 500 px).png" class="d-block w-100" alt="Chocolava Image" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Classic Pizza  -->
+
+  <nav class="navbar navbar-light bg-success mt-3 mx-2 my-1 rounded ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-light text-center " href="#">
+        <img src="Images/Classic Mania.png" alt="Classic Mania Logo" width="30" height="24"
+          class="d-inline-block align-text-top text-center " />
+        Classic Mania
+      </a>
+    </div>
+  </nav>
+
+  <div class="classic mt-4">
+    <div class="card1 shadow-lg p-3 mb-4 bg-white  rounded" style="width: 18rem;">
+      <img src="Images/Margherita.jpg" class="card-img-top" alt="Margherita Pizza">
+      <div class="card-body">
+        <h5 class="card-title">Margherita Pizza</h5>
+        <p class="card-text">A Classic Cheesy Margharita. Can't Go Wrong.</p>
+        <button type="button" class="btn btn-outline-success float-end">Add </button>
+        <big>
+          <p>
+            99 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+
+    <div class="card2 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem; ">
+      <img src="Images/Onion Pizza.jpg" class="card-img-top" alt="Onion Pizza">
+      <div class="card-body">
+        <h5 class="card-title">Onion Pizza</h5>
+        <p class="card-text">Onions On A Cheesy Base With In House Sauce</p>
+        <button type="button" class="btn btn-outline-success float-end">Add </button>
+        <big>
+          <p>
+            69 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+
+
+
+    <div class="card3 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem;">
+      <img src="Images/Jalapenos & Olives Pizza.jpg" class="card-img-top" alt="Jalapenos & Olives Pizza">
+      <div class="card-body">
+        <h5 class="card-title">
+          Jalapenos & Olives Pizza</h5>
+        <p class="card-text">Remarkable Blend Of Jalapenos And Black Olives</p>
+        <button type="button" class="btn btn-outline-success float-end">Add </button>
+        <big>
+          <p>
+            119 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+    <div class="card4 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem;">
+      <img src="Images/VEGGIE PARADISE.jpg" class="card-img-top" alt="Veggie Paradise">
+      <div class="card-body">
+        <h5 class="card-title">Veggie Paradise <span class="badge bg-danger">New</span></h5>
+        <p class="card-text">Goldern Corn, Black Olives, Capsicum & Red Paprika</p>
+        <button type="button" class="btn btn-outline-success float-end">Add </button>
+        <big>
+          <p>
+            139 &#8377</p>
+        </big>
+      </div>
+    </div>
+  </div>
+
+  <!-- pizzo's Menia -->
+
+  <nav class="navbar navbar-light bg-primary mx-2 my-1 rounded ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-light text-center " href="#">
+        <img src="Images/Pizzo's Mania.png" alt="Pizzo's Mania Logo" width="30" height="24"
+          class="d-inline-block align-text-top text-center " />
+        Pizzo's Mania
+      </a>
+    </div>
+  </nav>
+
+  <div class="pizzos mt-4">
+    <div class="card5 shadow-lg p-3 mb-4 bg-white  rounded" style="width: 18rem;">
+      <img src="Images/7 cheezy.jpeg" class="card-img-top" alt="7 Cheezy Pizza">
+      <div class="card-body">
+        <h5 class="card-title">
+          Pizzo's 7 Cheezzz</h5>
+        <p class="card-text">White Mozarella Cream, White Cheese,Monterey Jack,, Colby & Orange Cheddar Cheese</p>
+        <button type="button" class="btn btn-outline-primary float-end">Add </button>
+        <big>
+          <p>
+            259 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+
+    <div class="card6 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem; ">
+      <img src="Images/Peri peri.jpeg" class="card-img-top" alt="
+      Pizzo's Peri Peri ">
+      <div class="card-body">
+        <h5 class="card-title">
+          Pizzo's Peri Peri <span class="badge bg-danger">New</span></h5>
+        <p class="card-text">Milder, But Just As Tasty. Onion, Capsicum, Mushroom, Paneer, Olives With Peri Peri Dip</p>
+        <button type="button" class="btn btn-outline-primary float-end">Add </button>
+        <big>
+          <p>
+            279 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+
+
+
+    <div class="card7 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem;">
+      <img src="Images/English Retreat.jpeg" class="card-img-top" alt="
+English Retreat Pizza">
+      <div class="card-body">
+        <h5 class="card-title">
+          Pizzo's
+          English Retreat</h5>
+        <p class="card-text">Olives,Red Paprika, Tomatoes, Paneer, Capsicum, Cheese, Jalapeno Dip
+        </p>
+        <button type="button" class="btn btn-outline-primary float-end">Add </button>
+        <big>
+          <p>
+            279 &#8377</p>
+        </big>
+      </div>
+    </div>
+
+    <div class="card8 shadow-lg p-3 mb-4 bg-white rounded" style="width: 18rem;">
+      <img src="Images/Burn2hell.jpg" class="card-img-top" alt="
+Burn To Hell Pizza">
+      <div class="card-body">
+        <h5 class="card-title">
+          Pizzo's Burn 2 Hell </h5>
+        <p class="card-text">A Fiery And Lethal Hot & Garlic Dip, Jalapenos, Mushrooms, Olives And
+          Capsicum</p>
+        <button type="button" class="btn btn-outline-primary float-end">Add </button>
+        <big>
+          <p>
+            299 &#8377</p>
+        </big>
+      </div>
+    </div>
+  </div>
+
+  <!-- GarlicBreads -->
+
+  <nav class="navbar navbar-light bg-danger mt-3 mx-2 my-1 rounded ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-light text-center " href="#">
+        <img src="Images/Garlicbreads icon.png" alt="GarlicBreads Logo" width="30" height="24"
+          class="d-inline-block align-text-top text-center " />
+        GarlicBreads
+      </a>
+    </div>
+  </nav>
+
+  <div class="bread">
+
+    <div class="card9 my-4 shadow-lg p-3 mb-4 bg-white rounded " style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="Images/Plain garlic Bread.jpg" class="img-fluid rounded-start" alt="Plain GarlicBread">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Plain Garlic Bread</h5>
+            <p class="card-text">[50 GM] The Quintessential Garlic Bread Side For Your Pizza</p>
+            <button type="button" class="btn btn-outline-danger float-end">Add </button>
+            <big>
+              <p>
+                79 &#8377</p>
+            </big>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card10 my-4 shadow-lg p-3 mb-4 bg-white rounded" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="Images/supreme garlic bread.jpg" class="img-fluid rounded-start" alt="supreme garlic bread">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Supreme Garlic Bread</h5>
+            <p class="card-text">[80 GM] Sweet Corns + Onions + Jalapenos & Olives.</p>
+            <button type="button" class="btn btn-outline-danger float-end">Add </button>
+            <big>
+              <p>
+                99 &#8377</p>
+            </big>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- desserts -->
+
+  <nav class="navbar navbar-light bg-secondary mx-2 my-1 rounded ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-light text-center " href="#">
+        <img src="Images/Desserts icon.png" alt="Desserts Logo" width="30" height="24"
+          class="d-inline-block align-text-top text-center " />
+        Desserts
+      </a>
+    </div>
+  </nav>
+
+
+  <div class="cake">
+
+    <div class="card11 my-4 shadow-lg p-3 mb-4 bg-white rounded" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="Images/chocolava.jpg" class="img-fluid rounded-start" alt="choco lava">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Choco Lava</h5>
+            <p class="card-text">[100 GM] Loaded with premium chocolate</p>
+            <button type="button" class="btn btn-outline-secondary float-end">Add </button>
+            <big>
+              <p>
+                99 &#8377</p>
+            </big>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card12 my-4 shadow-lg p-3 mb-4 bg-white rounded" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="Images/Redvelvet.jpg" class="img-fluid rounded-start" alt="Red Velvet Lava Cake">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Red Velvet Lava Cake</h5>
+            <p class="card-text">[100 GM] Loaded with Premium Red Velvet Lava</p>
+            <button type="button" class="btn btn-outline-secondary float-end">Add </button>
+            <big>
+              <p>
+                139 &#8377</p>
+            </big>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="footer mx-3">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24">
+            <use> <img src="Images\pizza.png" alt="Pizzo's Logo width=" 30" height="24"></use>
+          </svg>
+        </a>
+        <span class="text-muted">© 2021 Pizzo's, Inc</span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+              <use> <img src="Images/twitter.png" alt="Twitter's Logo width=" 30" height="24"></use>
+            </svg></a></li>
+        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+              <use> <img src="Images/instagram.png" alt="instagram's Logo width=" 30" height="24"></use>
+            </svg></a></li>
+        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+              <use> <img src="Images/facebook.png" alt="facebook's Logo width=" 30" height="24"></use>
+            </svg></a></li>
+      </ul>
+    </footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
